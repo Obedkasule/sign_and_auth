@@ -1,0 +1,61 @@
+{% extends "sign_and_auth/base.html" %}
+{% block content %}
+<script type="text/javascript">
+  	$(document).ready(function() {
+   		$("select").material_select();
+
+   		$("#id_country_code").change(function(){
+   			$("#c_code").val($("#id_country_code").val());
+   		});
+
+   		
+    });
+
+</script>
+	<div class="container">
+		<form action="sign_up_step_two" method="post">
+			{% csrf_token %}
+			<div class="input-field">
+				{{sign_form.first_name}}
+				<label class="active" for="{{sign_form.first_name.id_for_label}}">First name:</label>
+			</div>
+			<div class="input-field">
+				{{sign_form.other_names}}
+				<label class="active" for="{{sign_form.other_names.id_for_label}}">Other names:</label>
+			</div>
+			<div class="input-field">
+				{{sign_form.gender}}
+				<label class="active" for="{{sign_form.gender.id_for_label}}">Gender:</label>
+			</div>
+			<div class="input-field">
+				{{sign_form.email}}
+				<label class="active" for="{{sign_form.email.id_for_label}}">Email:</label>
+			</div>
+
+			<div class="row">
+				<div class="input-field col s3">
+					{{sign_form.country_code}}
+			     	<!--<select name="c_code" id="c_name">
+			     		<option value="" disabled selected>Country</option>
+				        <option value="+256">Uganda</option>
+				        <option value="+1">USA</option>
+				        <option value="+2">Britain</option>
+			     	</select>-->
+			    </div>
+			    <div class="input-field col s3">
+					<input type="text" name="tel_no" id="c_code" placeholder="Country code">
+				</div>
+				<div class="input-field col s3">
+					{{sign_form.telephone}}
+					<label class="active" for="tel_no">Telphone Number:</label>
+				</div>
+			</div>
+			
+			<div class="input-field">
+				<input type="Submit" value="Sign-up" class="btn waves-effect waves-light green darken-2">
+			</div>				
+		</form>
+	</div>
+
+
+{% endblock %}

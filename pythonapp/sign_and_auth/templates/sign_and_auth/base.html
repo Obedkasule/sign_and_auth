@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+
+<head>
+
+	<title>Sign-up and Login App</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript" src='{% static "sign_and_auth/js/jquery-3_2_1.js" %}'></script>
+	<link rel="stylesheet" href='{% static "sign_and_auth/css/app_css.css" %}' />
+	<link rel="stylesheet" type="text/css" href='{% static "sign_and_auth/css/materialize.css" %}' />
+	<script type="text/javascript" src='{% static "sign_and_auth/js/materialize.js" %}'></script>
+</head>
+	
+	
+<body>	
+	
+	<div class="top-div">
+		<ul>
+			<li><a href="#"> Welcome to the APP</a></li>
+			<li><a href="sign_up"> Sign-up</a></li>
+			<li><a href="sign_in"> Sign-in</a></li>
+			<li><a href="about"> About APP</a></li>
+		</ul>
+
+	</div>
+	<div>
+		{% block content %}
+		{% endblock %}
+	</div>
+
+	<div class="footed">
+		<p>This is a trial app</p>
+	</div>
+
+</body>
+</html>

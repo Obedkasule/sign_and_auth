@@ -1,0 +1,37 @@
+{% extends "sign_and_auth/base.html" %}
+{% block content %}
+<script type="text/javascript">
+  	$(document).ready(function() {
+   		$("select").material_select();
+
+   		$("#id_country_code").change(function(){
+   			$("#c_code").val($("#id_country_code").val());
+   		});
+
+   		
+    });
+
+</script>
+	<div class="container">
+
+		<form action="logging" method="post">
+			{% csrf_token %}
+			<div class="errored">{{error}}</div>
+			
+			<div class="input-field">
+				<input type="email" name="u_name" id="c_code" class="validate">
+				<label class="active" for="tel_no">Username: you@example.com</label>
+			</div>
+			<div class="input-field col s3">
+				<input type="password" name="p_word" id="c_code">
+				<label class="active" for="tel_no">Password:</label>
+			</div>
+			
+			<div class="input-field">
+				<input type="Submit" value="Sign-in" class="btn waves-effect waves-light green darken-2">
+			</div>				
+		</form>
+	</div>
+
+
+{% endblock %}

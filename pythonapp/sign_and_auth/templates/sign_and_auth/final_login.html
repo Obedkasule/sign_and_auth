@@ -1,0 +1,23 @@
+{% extends "sign_and_auth/base.html" %}
+{% block content %}
+
+<script type="text/javascript">
+	/*$(document).ready(function(){
+		$("#phone_code").keyup(function(){
+			if($(this).val().length == 4){
+				
+					$("#check-btn").html($(this).val() == "{{usercode}}"
+						?'<input type="Submit" value="Continue" class="btn waves-effect waves-light green">'
+						:'<button value="wrong Code" class="btn waves-effect waves-light red">');
+				}
+		});
+	});*/
+</script>
+	<div class="container">
+		<div>
+			Thanks for registering with us. Please check your email for your login credentials.
+			Note: You will always use a code sent to your provided phone number as an added authentication process 
+		</div>
+		
+	</div>
+{% endblock %}
